@@ -1,0 +1,18 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+*.zip
+
+# .tfvars files
+*.tfvars
+
+# SAM
+.aws-sam/*
+
+# IDE
+.idea/
+*.iml
