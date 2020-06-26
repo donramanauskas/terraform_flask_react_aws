@@ -15,3 +15,11 @@ module "flask-react-codebuild" {
 module "ecr" {
   source = "./templates/ecr"
 }
+
+module "db" {
+  source = "./templates/db"
+  subnet_ids = module.flask-react-demo-network.subnets
+  master_password = var.master_password
+  master_username = var.master_username
+  availability_zones = var.availability_zones
+}

@@ -21,3 +21,11 @@ variable "availability_zones" {
 variable "project_location" {
   type = string
 }
+
+variable "master_username" {
+  type = string
+}
+
+variable "master_password" {
+  type = string
+}
