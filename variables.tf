@@ -1,3 +1,7 @@
+variable "account_id" {
+  type = string
+}
+
 variable "vpc_cidr" {
   type = string
 }
@@ -27,5 +31,9 @@ variable "master_username" {
 }
 
 variable "master_password" {
+  type = string
+}
+
+variable "production_secret_key" {
   type = string
 }

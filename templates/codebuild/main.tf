@@ -26,8 +26,29 @@ resource "aws_codebuild_project" "flask_react_codebuild_demo" {
 
   environment {
     compute_type = "BUILD_GENERAL1_SMALL"
-    image = "aws/codebuild/standard:1.0"
+    image = "aws/codebuild/standard:2.0"
     type = "LINUX_CONTAINER"
+    privileged_mode = true
+
+    environment_variable {
+      name = "AWS_ACCOUNT_ID"
+      value = var.account_id
+    }
+
+    environment_variable {
+      name = "LOAD_BALANCER_DNS_NAME"
+      value = var.dns_name
+    }
+
+    environment_variable {
+      name = "AWS_RDS_URI"
+      value = var.rds_uri
+    }
+
+    environment_variable {
+      name = "PRODUCTION_SECRET_KEY"
+      value = var.production_secret_key
+    }
   }
 
   source {

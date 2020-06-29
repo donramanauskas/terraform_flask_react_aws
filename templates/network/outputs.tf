@@ -9,3 +9,7 @@ output "vpc_arn" {
 output "subnets" {
   value = aws_subnet.flask_react_demo_public.*.id
 }
+
+output "load_balancer_dns_name" {
+  value = aws_lb.flask_react_demo_lb.dns_name
+}

@@ -10,6 +10,10 @@ module "flask-react-demo-network" {
 module "flask-react-codebuild" {
   source = "./templates/codebuild"
   project_location = var.project_location
+  account_id = var.account_id
+  dns_name = "http://${module.flask-react-demo-network.load_balancer_dns_name}"
+  rds_uri = "postgress://webapp:${var.master_password}@${module.db.db_endpoint}/users_prod"
+  production_secret_key = var.production_secret_key
 }
 
 module "ecr" {
